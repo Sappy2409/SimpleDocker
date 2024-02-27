@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  server:
+    container_name: server
+    image: server:1.0
+    build: ../05
+
+  nginx:
+    container_name: proxy
+    image: nginx:1.0
+    build: .
+    ports:
+      - "80:8080"
